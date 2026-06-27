@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400;1,700;1,900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Custom Editorial Aesthetic palette mapping */
+  --color-bk-cream: #502314;      /* Maps light cream text class to rich dark Editorial brown text */
+  --color-bk-sand: #EBDCCB;       /* Warm editorial sand */
+  --color-bk-brown: #502314;      /* Deep rich editorial brown */
+  --color-bk-brown-light: #7E3E26; /* Warm terracotta */
+  --color-bk-orange: #D62300;     /* Signature vibrant brand red */
+  --color-bk-orange-light: #FF3B1A; /* Lighter hot pepper red */
+  --color-bk-red: #D62300;        /* Classic bold grill red */
+  --color-bk-charcoal: #F5EBDF;   /* Main beige Editorial page background */
+  --color-bk-charcoal-light: #FFFFFF; /* Warm clean white card background to pop off the beige */
+  --color-bk-gold: #D62300;       /* Vibrant brand red/orange accent */
+}
+
+/* Custom scrollbars and sleek Editorial styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F5EBDF;
+}
+::-webkit-scrollbar-thumb {
+  background: #502314;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D62300;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #F5EBDF;
+  color: #502314;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Override utility borders for the light Editorial theme */
+[class*="border-white/5"] {
+  border-color: rgba(80, 35, 20, 0.08) !important;
+}
+[class*="border-white/10"] {
+  border-color: rgba(80, 35, 20, 0.14) !important;
+}
+[class*="border-white/15"] {
+  border-color: rgba(80, 35, 20, 0.2) !important;
+}
+[class*="border-white/20"] {
+  border-color: rgba(80, 35, 20, 0.25) !important;
+}
+[class*="border-white/25"] {
+  border-color: rgba(80, 35, 20, 0.3) !important;
+}
+[class*="border-white/30"] {
+  border-color: rgba(80, 35, 20, 0.35) !important;
+}
+
+/* Override white background opacity utils */
+[class*="bg-white/5"] {
+  background-color: rgba(80, 35, 20, 0.04) !important;
+}
+[class*="bg-white/10"] {
+  background-color: rgba(80, 35, 20, 0.08) !important;
+}
+[class*="bg-white/15"] {
+  background-color: rgba(80, 35, 20, 0.12) !important;
+}
+[class*="bg-white/20"] {
+  background-color: rgba(80, 35, 20, 0.16) !important;
+}
+
+/* Ensure buttons with solid brand backgrounds have readable white/cream text */
+button.bg-bk-orange,
+a.bg-bk-orange,
+button.bg-bk-brown,
+a.bg-bk-brown,
+button.bg-bk-red,
+a.bg-bk-red,
+.bg-bk-orange button,
+.bg-bk-brown button {
+  color: #F5EBDF !important;
+}
+
+/* Make inputs look gorgeous in light theme */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  background-color: #FFFFFF !important;
+  color: #502314 !important;
+  border-color: rgba(80, 35, 20, 0.15) !important;
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder {
+  color: rgba(80, 35, 20, 0.4) !important;
+}
+
+/* Subtly pulse key glowing items */
+@keyframes flameGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(214, 35, 0, 0.25));
+  }
+  50% {
+    filter: drop-shadow(0 0 35px rgba(214, 35, 0, 0.45));
+  }
+}
+
+.flame-glow-effect {
+  animation: flameGlow 4s ease-in-out infinite;
+}
+
+/* Custom visual mask reveal classes */
+.mask-revealer {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.mask-revealer.active {
+  clip-path: inset(0 0 0 0);
+}

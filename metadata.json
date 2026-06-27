@@ -1,0 +1,6 @@
+{
+  "name": "Burger King",
+  "description": "A premium, world-class digital flagship marketing and ordering experience for Burger King, optimized for speed, cinematic visual storytelling, menu discovery, loyalty rewards, and conversions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
